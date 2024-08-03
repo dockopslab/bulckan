@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "Readme",
         "vulcanCD-code",
-        "docker"
+        "docker",
+        "dockerfile"
     ]
 }

@@ -1,10 +1,10 @@
-# Usa la imagen base de Alpine
+# Use the base image of Alpine
 FROM alpine:latest
 
-# Evita interacciones durante la instalación de paquetes
+# Avoid interactions during package installation
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Instala dependencias esenciales
+# Install essential dependencies
 RUN apk update && \
     apk add --no-cache \
     git \
@@ -13,13 +13,10 @@ RUN apk update && \
     bash \
     docker-compose
 
-# Copia el script de despliegue al contenedor
+# Copy the deployment script to the container
 COPY vulcan.sh /usr/local/bin/vulcan.sh
 
-# Da permisos de ejecución al script
+# Give execution permissions to the script
 RUN chmod +x /usr/local/bin/vulcan.sh
 
-# Define el punto de entrada para el contenedor
 ENTRYPOINT ["/usr/local/bin/vulcan.sh"]
-
-
