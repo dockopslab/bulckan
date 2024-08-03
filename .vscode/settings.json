@@ -3,6 +3,7 @@
         "Readme",
         "vulcanCD-code",
         "docker",
-        "dockerfile"
+        "dockerfile",
+        "environment"
     ]
 }
