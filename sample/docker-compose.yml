@@ -1,5 +1,7 @@
 version: '3.8'
 
 services:
-  hello-world:
-    image: hello-world
+  apache:
+    image: httpd:latest
+    ports:
+      - "8080:80"
