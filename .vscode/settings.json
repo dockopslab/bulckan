@@ -1,5 +1,9 @@
 {
     "conventionalCommits.scopes": [
-        "Readme"
+        "Readme",
+        "vulcanCD-code",
+        "docker",
+        "dockerfile",
+        "environment"
     ]
 }
