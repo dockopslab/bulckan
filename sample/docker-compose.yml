@@ -5,3 +5,5 @@ services:
     image: httpd:latest
     ports:
       - "8080:80"
+    labels:
+      - "com.example.description=Servidor Apache HTTP"
