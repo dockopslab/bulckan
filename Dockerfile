@@ -14,9 +14,9 @@ RUN apk update && \
     docker-compose
 
 # Copy the deployment script to the container
-COPY vulcan.sh /usr/local/bin/vulcan.sh
+COPY compose.sh /usr/local/bin/compose.sh
 
 # Give execution permissions to the script
-RUN chmod +x /usr/local/bin/vulcan.sh
+RUN chmod +x /usr/local/bin/compose.sh
 
-ENTRYPOINT ["/usr/local/bin/vulcan.sh"]
+ENTRYPOINT ["/usr/local/bin/compose.sh"]
