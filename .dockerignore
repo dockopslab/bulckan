@@ -1,0 +1,11 @@
+# VSCode
+.vscode/
+
+# git
+.git
+.gitignore
+
+# files
+.env
+README.md
+LICENSE
