@@ -138,8 +138,8 @@ services:
     environment:
       - GITHUB_URL=github.com/dockopslab/bulckan.git
       - GITHUB_BRANCH=example/bulckan-target
-      - GITHUB_PATH=sample/
-      - CHECK_INTERVAL=60
+      - GITHUB_PATH=watchtower/
+      - CHECK_INTERVAL=3600
       - GITHUB_USERNAME=${GITHUB_USERNAME}
       - GITHUB_TOKEN=${GITHUB_TOKEN}
     volumes:
@@ -152,7 +152,7 @@ services:
     environment:
       - GITHUB_URL=github.com/dockopslab/bulckan.git
       - GITHUB_BRANCH=example/bulckan-target
-      - GITHUB_PATH=sample1/
+      - GITHUB_PATH=sample/
       - CHECK_INTERVAL=120
       - GITHUB_USERNAME=${GITHUB_USERNAME}
       - GITHUB_TOKEN=${GITHUB_TOKEN}
