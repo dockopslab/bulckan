@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  bulckan1:
+    image: ghcr.io/dockopslab/bulckan:latest
+    environment:
+      - GITHUB_URL=${GITHUB_URL}
+      - GITHUB_BRANCH=${GITHUB_BRANCH}
+      - GITHUB_PATH=${GITHUB_PATH}
+      - CHECK_INTERVAL=${CHECK_INTERVAL}
+      - GITHUB_USERNAME=${GITHUB_USERNAME}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
