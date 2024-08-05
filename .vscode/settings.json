@@ -9,6 +9,7 @@
         "integration",
         "notifications",
         "settings",
-        "tests"
+        "tests",
+        "README"
     ]
 }
