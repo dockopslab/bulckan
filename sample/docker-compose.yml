@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  apache:
+  apache1:
     image: httpd:latest
     ports:
       - "8080:80"
     labels:
-      - "com.example.description=Servidor Apache HTTP"
+      - "com.example.description=Servidor Apache HTTP 1"
