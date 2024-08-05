@@ -14,9 +14,9 @@ RUN apk update && \
     docker-compose
 
 # Copy the deployment script to the container
-COPY compose.sh /usr/local/bin/compose.sh
+COPY bulckan.sh /usr/local/bin/bulckan.sh
 
 # Give execution permissions to the script
-RUN chmod +x /usr/local/bin/compose.sh
+RUN chmod +x /usr/local/bin/bulckan.sh
 
-ENTRYPOINT ["/usr/local/bin/compose.sh"]
+ENTRYPOINT ["/usr/local/bin/bulckan.sh"]

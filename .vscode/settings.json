@@ -1,9 +1,15 @@
 {
     "conventionalCommits.scopes": [
-        "Readme",
+        "backend",
+        "ci",
+        "docs",
         "vulcanCD-code",
         "docker",
-        "dockerfile",
-        "environment"
+        "environment",
+        "examples",
+        "integration",
+        "notifications",
+        "settings",
+        "tests"
     ]
 }

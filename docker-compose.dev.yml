@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  deployer:
+  bulckan:
     build: .
     environment:
       - GITHUB_URL=${GITHUB_URL}
