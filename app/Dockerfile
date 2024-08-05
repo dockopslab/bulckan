@@ -1,17 +1,14 @@
 # Use the base image of Alpine
 FROM alpine:latest
 
-# Avoid interactions during package installation
-ENV DEBIAN_FRONTEND=noninteractive
-
-# Install essential dependencies
-RUN apk update && \
-    apk add --no-cache \
+# Install essential dependencies, and remove cache and unnecessary files
+RUN apk --no-cache add \
     git \
     curl \
-    docker \
     bash \
-    docker-compose
+    docker-cli \
+    docker-compose && \
+    rm -rf /var/cache/apk/* /tmp/*
 
 # Copy the deployment script to the container
 COPY bulckan.sh /usr/local/bin/bulckan.sh
