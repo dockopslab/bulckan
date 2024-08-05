@@ -11,6 +11,8 @@ The application clones a GitHub repository, periodically checks for changes to a
 - Docker Compose
 - Access to a GitHub repository (public or private)
 
+bulckan only monitors changes in the specified path and will only update the configuration of the docker compose file. It does not monitor if images have been updated, use [Watchtower](https://containrrr.dev/watchtower/?ref=selfh.st) for that by deploying it with bulckan.
+
 Note: To test the functionality, it is possible to deploy bulckan as configured. The application points to a branch of the same repository with the Docker Compose files needed to deploy an Apache container.
 
 ## Configuration
