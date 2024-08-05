@@ -1,0 +1,10 @@
+# git
+.git
+.gitignore
+
+# folders
+.vscode/
+.github/
+
+# files
+.env

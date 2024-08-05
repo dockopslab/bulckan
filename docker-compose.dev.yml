@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   bulckan:
-    build: .
+    build: ./app/
     environment:
       - GITHUB_URL=${GITHUB_URL}
       - GITHUB_BRANCH=${GITHUB_BRANCH}
