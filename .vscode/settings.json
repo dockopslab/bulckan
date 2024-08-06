@@ -10,6 +10,7 @@
         "notifications",
         "settings",
         "tests",
-        "README"
+        "README",
+        "app"
     ]
 }
