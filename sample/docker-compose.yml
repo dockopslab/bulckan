@@ -7,3 +7,4 @@ services:
       - "8080:80"
     labels:
       - "com.example.description=Servidor Apache HTTP 1"
+      - "com.example.description=Servidor update test 1"
