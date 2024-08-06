@@ -1,4 +1,12 @@
-version: '3.8'
+name: 'bulckan'
+
+networks:
+  bulckan:
+
+volumes:
+  repo1:
+  repo2:
+  repo3:
 
 services:
   bulckan1:
@@ -14,6 +22,10 @@ services:
       - GITHUB_TOKEN=${GITHUB_TOKEN}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - repo1:/repo
+      # - .repo1:/repo
+    networks:
+      - bulckan
   
   bulckan2:
     image: ghcr.io/dockopslab/bulckan:latest
@@ -28,6 +40,10 @@ services:
       - GITHUB_TOKEN=${GITHUB_TOKEN}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - repo2:/repo
+      # - .repo2:/repo
+    networks:
+      - bulckan
 
   bulckan3:
     image: ghcr.io/dockopslab/bulckan:latest
@@ -42,5 +58,9 @@ services:
       - GITHUB_TOKEN=${GITHUB_TOKEN}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - repo3:/repo
+      # - .repo3:/repo
+    networks:
+      - bulckan
 
   # ...

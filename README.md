@@ -65,47 +65,9 @@ time="2024-08-05T20:55:10Z" level=warning msg="/repo/sample/
  efc2b5ad9eec Downloading [>                                                  ]  294.2kB/29.13MB
  efc2b5ad9eec Downloading [=========>                                         ]  5.339MB/29.13MB
  efc2b5ad9eec Downloading [================>                                  ]  9.779MB/29.13MB
- efc2b5ad9eec Downloading [=========================>                         ]  15.13MB/29.13MB
- f214daa0692f Downloading [>                                                  ]  42.98kB/4.2MB
- efc2b5ad9eec Downloading [=======================================>           ]  23.16MB/29.13MB
- f214daa0692f Downloading [=====================================>             ]  3.136MB/4.2MB
- 05383fd8b2b3 Downloading [>                                                  ]  269.6kB/26.04MB
- f214daa0692f Verifying Checksum 
- f214daa0692f Download complete 
- efc2b5ad9eec Download complete 
- efc2b5ad9eec Extracting [>                                                  ]  294.9kB/29.13MB
- 05383fd8b2b3 Downloading [=============>                                     ]  6.916MB/26.04MB
- efc2b5ad9eec Extracting [============>                                      ]  7.078MB/29.13MB
- 05383fd8b2b3 Downloading [=================================>                 ]  17.25MB/26.04MB
- 05383fd8b2b3 Verifying Checksum 
- 05383fd8b2b3 Download complete 
- efc2b5ad9eec Extracting [=================>                                 ]  10.32MB/29.13MB
- 88ad12232aa1 Downloading [==================================================>]     291B/291B
- 88ad12232aa1 Verifying Checksum 
- 88ad12232aa1 Download complete 
- efc2b5ad9eec Extracting [============================>                      ]  16.81MB/29.13MB
- efc2b5ad9eec Extracting [==========================================>        ]  24.77MB/29.13MB
- efc2b5ad9eec Extracting [================================================>  ]  28.02MB/29.13MB
- efc2b5ad9eec Extracting [================================================>  ]  28.31MB/29.13MB
- efc2b5ad9eec Extracting [==================================================>]  29.13MB/29.13MB
- efc2b5ad9eec Pull complete 
- fce1785eb819 Extracting [==================================================>]     145B/145B
- fce1785eb819 Extracting [==================================================>]     145B/145B
- fce1785eb819 Pull complete 
- 4f4fb700ef54 Extracting [==================================================>]      32B/32B
- 4f4fb700ef54 Extracting [==================================================>]      32B/32B
- 4f4fb700ef54 Pull complete 
- f214daa0692f Extracting [>                                                  ]  65.54kB/4.2MB
- f214daa0692f Extracting [===================================>               ]  3.015MB/4.2MB
- f214daa0692f Extracting [==================================================>]    4.2MB/4.2MB
- f214daa0692f Pull complete 
- 05383fd8b2b3 Extracting [>                                                  ]  262.1kB/26.04MB
- 05383fd8b2b3 Extracting [==============>                                    ]  7.602MB/26.04MB
- 05383fd8b2b3 Extracting [================================>                  ]  17.04MB/26.04MB
- 05383fd8b2b3 Extracting [==========================================>        ]  22.28MB/26.04MB
- 05383fd8b2b3 Extracting [==================================================>]  26.04MB/26.04MB
- 05383fd8b2b3 Pull complete 
- 88ad12232aa1 Extracting [==================================================>]     291B/291B
+ efc2b5ad9eec Downloading 
+ ..........
+ [==================================================>]     291B/291B
  88ad12232aa1 Extracting [==================================================>]     291B/291B
  88ad12232aa1 Pull complete 
  apache1 Pulled 
