@@ -7,9 +7,20 @@ services:
   apache1:
     image: httpd:latest
     ports:
-      - "8080:80"
+      - "8085:80"
     networks:
       - bulckan-test1
     labels:
       - "com.example.description=Servidor Apache HTTP 1"
-      - "com.example-test.description=Test n:2"
+      - "com.example-test.description=Test n:3"
+  
+  apache2:
+    image: httpd:2.4.62-alpine3.20
+    ports:
+      - "8086:80"
+    networks:
+      - bulckan-test1
+    labels:
+      - "com.example.description=Servidor Apache HTTP 2"
+      - "com.example-test.description=Test n:3"
+  
