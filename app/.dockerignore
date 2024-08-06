@@ -5,6 +5,7 @@
 # folders
 .vscode/
 .github/
+.repo/
 
 # files
 .env
