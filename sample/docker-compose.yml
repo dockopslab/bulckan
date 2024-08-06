@@ -1,10 +1,15 @@
-version: '3.8'
+name: 'bulckan-test1'
+
+networks:
+  bulckan-test1:
 
 services:
   apache1:
     image: httpd:latest
     ports:
       - "8080:80"
+    networks:
+      - bulckan-test1
     labels:
       - "com.example.description=Servidor Apache HTTP 1"
-      - "com.example-test.description=Test 1"
+      - "com.example-test.description=Test n:2"
