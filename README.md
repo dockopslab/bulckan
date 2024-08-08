@@ -88,6 +88,14 @@ Total updates: 1
 Sleeping for 60 seconds...
 ```
 
+By adding the following tags to the target application's compose file, information tags will be set on the containers with the commit that forced the last deployment and the number of updates bulckan has performed to maintain parity:
+
+```
+    labels:
+      - "bulckan.deploy.update_count=${UPDATE_COUNT}"
+      - "bulckan.deploy.last_commit=${LAST_COMMIT}"
+```
+
 # Multiple deployment configuration
 
 bulckan can be deployed multiple times, so it can point to different repositories and keep different applications updated and deployed at the same time.
