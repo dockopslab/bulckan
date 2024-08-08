@@ -8,6 +8,10 @@ This project provides a GitOps tool for Docker Compose on a Docker container.
 
 The application clones a GitHub repository, periodically checks for changes to a specific branch and path, and deploys or updates the project using Docker Compose.
 
+At the end of each time interval, in addition to checking for changes and updating the deployment, it re-runs the initial command so that if a service has been removed, it is redeployed while maintaining parity between the deployment on the host and the compose files on Github.
+
+bulckan will show in the logs all the steps to deploy the compose file. It will also store and log the name specified in compose, the last commit that forced the deployment or update on the host, and the number of times it has been updated due to changes on GitHub.
+
 ## Requirements:
 - Docker
 - Docker Compose
@@ -126,7 +130,7 @@ services:
 ....
 ```
 
-Bulckan deployment:
+bulckan deployment:
 
 ```
 docker-compose -f docker-compose.example.yml up -d
