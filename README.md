@@ -1,17 +1,19 @@
+[![bulckanCI](https://github.com/dockopslab/bulckan/actions/workflows/bulckanCI.yml/badge.svg?branch=main)](https://github.com/dockopslab/bulckan/actions/workflows/bulckanCI.yml)
+![GitHub License](https://img.shields.io/github/license/dockopslab/bulckan)
+
+
 # bulckan
 
 This project provides a GitOps tool for Docker Compose on a Docker container.
 
 The application clones a GitHub repository, periodically checks for changes to a specific branch and path, and deploys or updates the project using Docker Compose.
 
-[![bulckanCI](https://github.com/dockopslab/bulckan/actions/workflows/bulckanCI.yml/badge.svg?branch=main)](https://github.com/dockopslab/bulckan/actions/workflows/bulckanCI.yml)
-
 ## Requirements:
 - Docker
 - Docker Compose
 - Access to a GitHub repository (public or private)
 
-bulckan only monitors changes in the specified path and will only update the configuration of the docker compose file. It does not monitor if images have been updated, use [Watchtower](https://containrrr.dev/watchtower/?ref=selfh.st) for that by deploying it with bulckan.
+bulckan only monitors changes in the specified path and will only update the configuration of the docker compose file. It does not monitor if the images have been updated, use [Watchtower](https://containrrr.dev/watchtower/?ref=selfh.st) for that by deploying it with bulckan or implement a workflow that changes the image version in the compose when the image is rebuilt.
 
 Note: To test the functionality, it is possible to deploy bulckan as configured. The application points to a branch of the same repository with the Docker Compose files needed to deploy an Apache container.
 
@@ -39,13 +41,19 @@ Bulckan deployment:
 docker compose up -d
 ```
 
-The application will clone the repository and display the docker-compose.yml of the specified branch and path:
+The application will clone the repository and deploy the compose.yml of the specified branch and path:
 
 ```
+Starting in 5 seconds...
 Cloning repository...
+rm: can't remove 'repo': Resource busy
 Cloning into 'repo'...
+Recording update...
 Deploying with docker-compose...
-time="2024-08-05T20:55:10Z" level=warning msg="/repo/sample/
+Compose name: 'bulckan-test1'
+Last deployed commit: 3ee4dfad909302af3e7561a2877ac1addfc0119d
+Total updates: 1
+ apache2 Pulling 
  apache1 Pulling 
  efc2b5ad9eec Pulling fs layer 
  fce1785eb819 Pulling fs layer 
@@ -63,9 +71,7 @@ time="2024-08-05T20:55:10Z" level=warning msg="/repo/sample/
  4f4fb700ef54 Verifying Checksum 
  4f4fb700ef54 Download complete 
  efc2b5ad9eec Downloading [>                                                  ]  294.2kB/29.13MB
- efc2b5ad9eec Downloading [=========>                                         ]  5.339MB/29.13MB
- efc2b5ad9eec Downloading [================>                                  ]  9.779MB/29.13MB
- efc2b5ad9eec Downloading 
+ efc2b5ad9eec Downloading
  ..........
  [==================================================>]     291B/291B
  88ad12232aa1 Extracting [==================================================>]     291B/291B
@@ -102,8 +108,6 @@ services:
       - GITHUB_BRANCH=example/bulckan-target
       - GITHUB_PATH=watchtower/
       - CHECK_INTERVAL=3600
-      - GITHUB_USERNAME=${GITHUB_USERNAME}
-      - GITHUB_TOKEN=${GITHUB_TOKEN}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
   
@@ -116,8 +120,6 @@ services:
       - GITHUB_BRANCH=example/bulckan-target
       - GITHUB_PATH=sample/
       - CHECK_INTERVAL=120
-      - GITHUB_USERNAME=${GITHUB_USERNAME}
-      - GITHUB_TOKEN=${GITHUB_TOKEN}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
