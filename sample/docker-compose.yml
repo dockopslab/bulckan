@@ -12,9 +12,9 @@ services:
       - bulckan-test1
     labels:
       - "com.example.description=Servidor Apache HTTP 1"
-      - "com.example-test.description=Test n:6"
-      - "deploy.update_count=${UPDATE_COUNT}"
-      - "deploy.last_commit=${LAST_COMMIT}"
+      - "com.example-test.description=Test n:7"
+      - "bulckan.deploy.update_count=${UPDATE_COUNT}"
+      - "bulckan.deploy.last_commit=${LAST_COMMIT}"
   
   apache2:
     image: httpd:2.4.62-alpine3.20
@@ -24,7 +24,7 @@ services:
       - bulckan-test1
     labels:
       - "com.example.description=Servidor Apache HTTP 2"
-      - "com.example-test.description=Test n:6"
-      - "deploy.update_count=${UPDATE_COUNT}"
-      - "deploy.last_commit=${LAST_COMMIT}"
+      - "com.example-test.description=Test n:7"
+      - "bulckan.deploy.update_count=${UPDATE_COUNT}"
+      - "bulckan.deploy.last_commit=${LAST_COMMIT}"
   
