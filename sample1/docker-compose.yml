@@ -4,6 +4,7 @@ services:
   apache2:
     image: httpd:latest
     ports:
-      - "8081:80"
+      - "8087:80"
     labels:
-      - "com.example.description=Servidor Apache HTTP 2"
+      - "com.example.description=Servidor Apache HTTP 3"
+      - "com.example-test.description=Test n:4"
