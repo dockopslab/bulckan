@@ -18,8 +18,6 @@ services:
       - GITHUB_BRANCH=example/bulckan-target
       - GITHUB_PATH=watchtower/
       - CHECK_INTERVAL=3600
-      - GITHUB_USERNAME=${GITHUB_USERNAME}
-      - GITHUB_TOKEN=${GITHUB_TOKEN}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - repo1:/repo
@@ -36,8 +34,6 @@ services:
       - GITHUB_BRANCH=example/bulckan-target
       - GITHUB_PATH=sample/
       - CHECK_INTERVAL=120
-      - GITHUB_USERNAME=${GITHUB_USERNAME}
-      - GITHUB_TOKEN=${GITHUB_TOKEN}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - repo2:/repo
@@ -54,8 +50,6 @@ services:
       - GITHUB_BRANCH=example/bulckan-target
       - GITHUB_PATH=sample1/
       - CHECK_INTERVAL=60
-      - GITHUB_USERNAME=${GITHUB_USERNAME}
-      - GITHUB_TOKEN=${GITHUB_TOKEN}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - repo3:/repo
