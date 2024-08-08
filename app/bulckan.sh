@@ -109,7 +109,7 @@ deploy() {
     
     # Show the current update count, last deployed commit hash, and name
     echo "Compose name: $(<"$NAME_FILE")"
-    echo "Last deployed commit: $(<"$LAST_COMMIT_FILE")"
+    echo "Commit deployed: $(<"$LAST_COMMIT_FILE")"
     echo "Total updates: $(<"$UPDATE_COUNT_FILE")"
     
     cd "repo/$GITHUB_PATH" && docker-compose up -d --build
