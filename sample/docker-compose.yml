@@ -13,6 +13,8 @@ services:
     labels:
       - "com.example.description=Servidor Apache HTTP 1"
       - "com.example-test.description=Test n:6"
+      - "deploy.update_count=${UPDATE_COUNT}"
+      - "deploy.last_commit=${LAST_COMMIT}"
   
   apache2:
     image: httpd:2.4.62-alpine3.20
@@ -23,4 +25,6 @@ services:
     labels:
       - "com.example.description=Servidor Apache HTTP 2"
       - "com.example-test.description=Test n:6"
+      - "deploy.update_count=${UPDATE_COUNT}"
+      - "deploy.last_commit=${LAST_COMMIT}"
   
