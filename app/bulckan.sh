@@ -107,11 +107,19 @@ deploy() {
     local name_value=$(get_name_value)
     echo "$name_value" > "$NAME_FILE"
     
+    # Load the update count and last commit into variables
+    local update_count=$(<"$UPDATE_COUNT_FILE")
+    local last_commit=$(<"$LAST_COMMIT_FILE")
+    
+    # Export these variables for use in docker-compose.yml
+    export UPDATE_COUNT="$update_count"
+    export LAST_COMMIT="$last_commit"
+    
     # Show the current update count, last deployed commit hash, and name
     echo "Compose name: $(<"$NAME_FILE")"
-    echo "Last deployed commit: $(<"$LAST_COMMIT_FILE")"
-    echo "Total updates: $(<"$UPDATE_COUNT_FILE")"
-    
+    echo "Commit deployed: $LAST_COMMIT"
+    echo "Total updates: $UPDATE_COUNT"
+
     cd "repo/$GITHUB_PATH" && docker-compose up -d --build
     cd ../..
 }
