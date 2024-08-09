@@ -27,4 +27,13 @@ services:
       - "com.example-test.description=Test n:7"
       - "bulckan.deploy.update_count=${UPDATE_COUNT}"
       - "bulckan.deploy.last_commit=${LAST_COMMIT}"
+
+  nginx:
+    image: nginx:latest
+    container_name: simple_nginx
+    ports:
+      - "8080:${NGINX_PORT}"
+    env_file:
+      - .env
+
   
