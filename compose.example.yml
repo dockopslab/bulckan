@@ -1,4 +1,4 @@
-name: 'bulckan'
+name: 'bulckan-example'
 
 networks:
   bulckan:
