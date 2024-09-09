@@ -12,6 +12,7 @@
         "tests",
         "README",
         "app",
-        "logs"
+        "logs",
+        "gitignore"
     ]
 }
