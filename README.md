@@ -19,7 +19,7 @@ bulckan will show in the logs all the steps to deploy the compose file. It will 
 
 bulckan only monitors changes in the specified path and will only update the configuration of the docker compose file. It does not monitor if the images have been updated, use [Watchtower](https://containrrr.dev/watchtower/?ref=selfh.st) for that by deploying it with bulckan or implement a workflow that changes the image version in the compose when the image is rebuilt.
 
-Note: To test the functionality, it is possible to deploy bulckan as configured. The application points to a branch of the same repository with the Docker Compose files needed to deploy an Apache container.
+Note: To test the functionality, it is possible to deploy bulckan as configured. The application points to a branch of the same repository that contains the [compose files](https://github.com/dockopslab/bulckan/tree/example/bulckan-target) needed to deploy one or more Apache containers.
 
 ## Configuration
 First, clone this repository and navigate to the project directory:
@@ -29,7 +29,7 @@ git clone https://github.com/dockopslab/bulckan.git
 cd bulckan
 ```
 
-Configure the ``.env`` file to access the repository, branch and path where the docker-compose.yml file you want to deploy and maintain with this tool is located:
+Configure the ``.env`` file to access the repository, branch and path where the compose file you want to deploy and maintain with this tool is located:
 
 ```
 GITHUB_URL=github.com/dockopslab/bulckan.git
@@ -96,19 +96,29 @@ By adding the following tags to the target application's compose file, informati
       - "bulckan.deploy.last_commit=${LAST_COMMIT}"
 ```
 
+See an example in this [compose file](https://github.com/dockopslab/bulckan/blob/example/bulckan-target/sample/docker-compose.yml).
+
 # Multiple deployment configuration
 
 bulckan can be deployed multiple times, so it can point to different repositories and keep different applications updated and deployed at the same time.
 
-Configure .git.env file if necessary:
+If necessary, configure the ``.git.env`` file:
 ```
 GITHUB_USERNAME=
 GITHUB_TOKEN=
 ```
 
-Configure environment variables in docker-compose.example.yml:
+Configure environment variables in ``compose.example.yml``:
 ```
-version: '3.8'
+name: 'bulckan-example'
+
+networks:
+  bulckan:
+
+volumes:
+  repo1:
+  repo2:
+  repo3:
 
 services:
   bulckan1:
@@ -141,7 +151,7 @@ services:
 bulckan deployment:
 
 ```
-docker-compose -f docker-compose.example.yml up -d
+docker-compose -f compose.example.yml up -d
 ```
 
 Note: Before deploying multiple docker-compose.yml with Bulckan, it is necessary to check for possible incompatibilities. Errors due to duplication of exposed ports, service names, networks, and others must be corrected before deployment.
